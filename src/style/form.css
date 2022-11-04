@@ -1,0 +1,53 @@
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+form input{
+    width: 300px;
+    height: 33px;
+}
+
+form select {
+    width: 300px;
+    height: 33px;
+}
+
+.button-form{
+    width: 300px;
+    height: 33px;
+    background-color: var(--color-purple);
+    color: white;
+    border: 1px solid var(--color-purple);
+}
+
+.input-desc{
+    width: 300px;
+    height: 88px;
+    text-align: left;
+}
+
+
+.form-delete{
+    background-color: white;
+    width: 300px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+}
+
+.form-delete h3{
+    text-align: center;
+}
+
+
+.deletebutton{
+    width: 300px;
+    height: 50px;
+    background-color: var(--color-green);
+    border: 1px solid var(--color-green);
+    color: white;
+    font: 20px;
+}

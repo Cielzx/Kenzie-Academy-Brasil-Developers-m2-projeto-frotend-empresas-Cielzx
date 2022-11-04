@@ -1,0 +1,135 @@
+body{
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+
+.header-user{
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 0xp;
+    /* box-shadow: 0px 9px 24px 0px rgb(0 0 0 / 20%); */
+    height: 47px;
+    align-items: center;
+}
+
+
+.header-div{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding: 0px 10px;
+}
+
+.header-div h1{
+    font-size: 20px;
+    font-family: "inter";
+}
+
+.elipse-img{
+    width: 20px;
+    height: 20px;
+}
+
+.sec-user-status{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 21px 0px;
+    max-width: 1280px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    padding: 0px 45px;
+}
+
+.sec-user-status h1{
+    font-size: 30px;
+    font-family: "inter";
+}
+
+.user-status{
+    display: flex;
+    gap: 182px;
+}
+
+.user-status p{
+    font-size: 20px;
+    font-weight: 400;
+    font-family: "inter";
+}
+
+.status-div{
+    display: flex;
+    gap: 182px;
+}
+
+
+.user-edit-button{
+    background-image: url(../../assets/img/VectorEditb-button.png);
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 30px;
+    border: none;
+    cursor: pointer;
+}
+
+.button-edit-div{
+    width: 100px;
+    height: 39px;
+    position: relative;
+    bottom: 21px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.list-contain{
+    display: flex;
+    list-style: none;
+    max-width: 1280px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    height: 437px;
+    gap: 20px;
+    justify-content: center;
+    padding: 33px 0px;
+    flex-wrap: wrap;
+}
+
+.div-list-h1{
+    display: none;
+    height: 437px;
+    /* display: flex; */
+    align-items: center;
+    justify-content: center;
+}
+
+.div-list-h1 h1{
+    font-size: 40px;
+}
+
+.list-contain li{
+    display: flex;
+    flex-direction: column;
+    font-weight: 600;
+    gap: 20px;
+    padding: 0px 10px;
+    width: 400px ;
+    height: 60px;
+    border: 1px solid var(--color-purple);
+}
+
+.div-company{
+    max-width: 1280px;
+    height: 80px;
+    background-color: var(--color-purple);
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.div-company p{
+    color: white;
+    font-size: 30px;
+    font-family: "inter";
+    font-weight: 600;
+}

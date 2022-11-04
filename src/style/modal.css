@@ -1,0 +1,102 @@
+.modal-background{
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.modal-container{
+    background-color: rgb(255, 255, 255);
+    width: 400px;
+    height: 300px;
+    position: relative;
+    bottom: 25%;
+    border-radius: 8px;
+    padding: 20px 40px;
+    box-sizing: border-box;
+}
+
+.modal-close{
+    padding: 10px 15px;
+    font-size: 20px;
+    border: none;
+    color: var(--grey-500);
+    background:none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+}
+
+.button-publish{
+    width: 100px;
+    height: 28px;
+    background-color: var(--brand100);
+    border: 1px solid var(--brand100);
+    color: white;
+    border-radius: 4px;
+}
+
+.button{
+    color: var(--gray400);
+    border: none;
+}
+
+.title-input{
+    border: none;
+    height: 30px;
+}
+
+.input-content{
+    border: none;
+    height: 30px;
+}
+
+/* Updatde*/
+.update-buttons{
+    display: flex;
+    gap: 10px;
+    position: relative;
+    top: 108px;
+    /* bottom: 20px; */
+    left: 583px;
+}
+
+.button-save{
+    width: 115px;
+    height: 28px;
+    background-color: var(--brand100);
+    border: 1px solid var(--brand100);
+    color: white;
+    border-radius: 4px; 
+}
+
+.delete-container{
+    display: flex;
+    flex-direction: column;
+    gap: 53px;
+}
+
+.button-delete{
+    display:  flex;
+    gap: 20px;
+    cursor: pointer;
+}
+/* .createButton{
+    width: 157px;
+    height: 27px;
+    color: white;
+    background-color: var(--alert200);
+    border: var(--alert100);
+} */
+
+.cancel{
+    background-color: none;
+    border: none;
+    color: var(--gray400);
+}

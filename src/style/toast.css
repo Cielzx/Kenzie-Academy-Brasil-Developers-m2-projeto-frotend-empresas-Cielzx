@@ -1,0 +1,82 @@
+.toast-container{
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    width: 205px;
+    height: 85px;
+    background-color: var(--color-green);
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 11px;
+    justify-content: center;
+    align-items: center;
+    animation: toast 4000ms ease-in forwards;
+} 
+
+@keyframes toast{
+    0%{right: 30px; bottom: -100px;}
+    25%{right: 30px; bottom: 21px;}
+    50%{right: 30px; bottom: 21px;}
+    60%{right: 30px; bottom: 21px;}
+    65%{right: 30px; bottom: 21px;}
+    70%{right: 30px; bottom: 21px;}
+    75%{right: 30px; bottom: 21px;}
+    80%{right: 30px; bottom: 21px;}
+    85%{right: 30px; bottom: 21px;}
+    90%{right: 30px; bottom: 21px;}
+    95%{right: 30px; bottom: 21px;}
+    100%{right: 30px; bottom: -100px;}
+}
+
+
+.toast-container-error{
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    width: 205px;
+    height: 85px;
+    background-color: var(--color-red);
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 11px;
+    justify-content: center;
+    align-items: center;
+    animation: toast 4000ms ease-in forwards;
+}
+
+.toast-text{
+    display: flex;
+    gap: 10px;
+}
+
+.p-redirection{
+    width: 252px;
+        display: none;
+        color: white;
+        justify-content: center;
+}
+
+.a-color{
+    color: var( --color-green);
+}
+
+.title-succes{
+    color: white;
+    font-size: 20px;
+    display: flex;
+    width: 184px;
+}
+
+.title-error{
+    color: var(--color-red);
+}
+
+.toast-error{
+    background-color: var(--color-red);
+    width: 22px;
+    display: flex;
+    height: 21px;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+}
