@@ -4,7 +4,7 @@ import { editDepart } from "./request.js"
 import { deleteDepart } from "./request.js"
 import { getUserOutOfWork } from "./request.js"
 import { renderDepartamens, renderUserHired } from "./render.js"
-import { openModal } from "./modal.js"
+import { openModal,openModalDel } from "./modal.js"
 import { hireFunction } from "./request.js"
 import { updateUser } from "./request.js"
 import { renderUser } from "./render.js"
@@ -179,7 +179,7 @@ const editDepartForm = async (id) => {
 
     const openModalDelete = async (id,nome) => {
         const deleteForm = deleteDepartForm(id,nome)
-        openModal(deleteForm)
+        openModalDel(deleteForm)
       }
 
 
@@ -191,13 +191,13 @@ const deleteDepartForm = (id,nome) => {
     const div = document.createElement('div')
     div.classList.add('delete-container')
     const h3 = document.createElement('h3')
-    h3.innerText = `Realmente deseja deletar o ${nome} e demitir seus funcionários?`
+    h3.innerText = `Realmente deseja deletar o Departamento ${nome} e demitir seus funcionários?`
     const divButton = document.createElement('div')
     divButton.classList.add('button-delete')
     const buttonConfirm = document.createElement('button')
     buttonConfirm.classList.add('deletebutton')
     buttonConfirm.type ="submit"
-    buttonConfirm.innerText = "Sim,deletar departamento."
+    buttonConfirm.innerText = "Confirmar"
 
 
     formulario.addEventListener("submit", async (event) => {

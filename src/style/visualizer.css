@@ -1,7 +1,7 @@
 .container-visualizer{
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
+  display: flex;
+  flex-direction: row;
+  gap: 126px;
 }
 
 .button-contratar{
@@ -15,6 +15,16 @@
     cursor: pointer;
 }
 
+.visualizer-text{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.visualizer-text p{
+  font-weight: 600;
+  font-family: "inter";
+}
 
 .list-visualizer{
     list-style: none;
@@ -24,6 +34,12 @@
     gap: 59px;
     width: 508px;
 }
+
+.list-visualizer p{
+  font-weight: 600;
+
+}
+
 ::-webkit-scrollbar {
     width: 16px;
   }

@@ -1,26 +1,27 @@
 ul{
-    display: flex;
     list-style: none;
-    gap: 47px;
-    /* margin: 0px 0px; */
     width: 487px;
-    /* height: 147px; */
+    height: 700px;
     overflow-x: scroll;
-    /* justify-content: center; */
-    flex-direction: column
+    flex-direction: column;
 }
+
 
 ::-webkit-scrollbar{
     display: none;
+    width: 0;
 }
+
+
 
 ul li{
     display: flex;
     flex-direction: column;
     /* width: 333px; */
-    gap: 10px;
-    height: 116px;
-    border-bottom: 2px solid var(--color-purple)
+    gap: 36px;
+    height: 118px;
+    margin: 8px 0px;
+    border-bottom: 2px solid var(--color-purple);
 }
 ul li p{
     font-family: "inter";

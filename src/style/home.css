@@ -44,7 +44,7 @@ section{
     width: 513px;
     height: 692px;
     display: flex;
-    gap: 54px;
+    /* gap: 54px; */
     flex-direction: column;
     align-items: center;
 }

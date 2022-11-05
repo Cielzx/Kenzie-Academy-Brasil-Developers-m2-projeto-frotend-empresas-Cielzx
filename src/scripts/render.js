@@ -1,16 +1,9 @@
 
-import { listOfDepartments } from "./request.js"
-import { listOfUser } from "./request.js";
-import { openModal,openModalVisualizer } from "./modal.js";
-import { editDepartForm } from "./formulario.js";
-import { visualizerForm } from "./formulario.js";
-import { openModalDelete } from "./formulario.js";
-import { getUserProfiles } from "./request.js";
-import { dissmissFun } from "./request.js";
-import { editDepartUser } from "./formulario.js";
-import { deleteUserForm } from "./formulario.js";
-import { openModalUserDelete } from "./formulario.js";
-import { editUserStatus } from "./formulario.js";
+import { listOfDepartments,listOfUser,getUserProfiles,dissmissFun } from "./request.js"
+import { openModal,openModalVisualizer,openModalEdit } from "./modal.js";
+import { editDepartForm,visualizerForm,openModalDelete,editDepartUser,openModalUserDelete,editUserStatus } from "./formulario.js";
+
+
 
 function renderList(){
     const ul = document.querySelector('.container-list')
@@ -236,7 +229,7 @@ buttonEdit.addEventListener('click',async (e)=>{
     e.preventDefault()
     const formulario = await editDepartForm(depart.uuid)
     console.log(formulario)
-    openModal(formulario)
+    openModalEdit(formulario)
 })
     const buttonDelete = document.createElement('button')
     buttonDelete.classList.add('delete-button')
@@ -256,6 +249,7 @@ buttonEdit.addEventListener('click',async (e)=>{
 
 const renderUserHired = async (ul,filt)=>{
     const users = await listOfUser()
+    const depart = await listOfDepartments()
     ul.innerHTML = ""
     ul.classList.add('list-visualizer')
 
@@ -266,6 +260,11 @@ const renderUserHired = async (ul,filt)=>{
         const spanLi = document.createElement('span')
         spanLi.innerText = element.professional_level
         const spanLi2 = document.createElement('span')
+        depart.forEach((dept)=>{
+            if(dept.uuid == element.department_uuid){
+                spanLi2.innerText = dept.name
+            }
+        })
         const buttonDesl = document.createElement('button')
         buttonDesl.classList.add('button-desligar')
         buttonDesl.innerText = "Desligar"
