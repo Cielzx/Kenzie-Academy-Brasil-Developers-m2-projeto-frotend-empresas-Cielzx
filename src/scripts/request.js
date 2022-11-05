@@ -95,6 +95,7 @@ async function listOfComapny(){
 
     const response = await request.json()
     localStorage.setItem('companies',JSON.stringify(response))
+    return response
 }
 
 
@@ -125,6 +126,8 @@ async function listOfUser(){
 
     const response = await request.json()
     localStorage.setItem('cadastrados',JSON.stringify(response))
+    return response
+    
 }
 
 
@@ -185,8 +188,139 @@ async function getUserProfiles(){
     })
 
     const response = await request.json()
+    console.log(response)
     return response
     
 }
 
-export {createUser,login,listOfComapny,getUserProfiles,validateUser,listOfDepartments,listOfUser,createDepart,editDepart,deleteDepart}
+
+async function getUserOutOfWork(){
+    const info = JSON.parse(localStorage.getItem('Token'))
+    const request = await fetch(baseUrl +'admin/out_of_work',{
+        method: 'GET',
+        headers: {
+            "Content-type": "application/json",
+            "Authorization": `Bearer ${info.token}`
+        },
+    })
+
+    const response = await request.json()
+    return response
+    
+}
+
+async function hireFunction(body){
+    const info = JSON.parse(localStorage.getItem('Token'))
+    const request = await fetch(baseUrl +'departments/hire/',{
+        method: 'PATCH',
+        headers: {
+            "Content-type": "application/json",
+            "Authorization": `Bearer ${info.token}`,
+        },
+        body: JSON.stringify(body)
+    })
+
+    const response = await request.json()
+    console.log(response)
+    return response
+    
+}
+
+
+async function dissmissFun(id){
+    const info = JSON.parse(localStorage.getItem('Token'))
+    const request = await fetch(baseUrl +`departments/dismiss/${id}`,{
+        method: 'PATCH',
+        headers: {
+            "Content-type": "application/json",
+            "Authorization": `Bearer ${info.token}`,
+        },
+    })
+
+    const response = await request.json()
+    console.log(response)
+    return response
+    
+}
+
+
+async function updateUser(body,id){
+    const info = JSON.parse(localStorage.getItem('Token'))
+    const request = await fetch(baseUrl +`admin/update_user/${id}`,{
+        method: 'PATCH',
+        headers: {
+            "Content-type": "application/json",
+            "Authorization": `Bearer ${info.token}`,
+        },
+        body: JSON.stringify(body)
+    })
+
+    const response = await request.json()
+    console.log(response)
+    return response
+    
+}
+
+async function deleteUser(id){
+    const info = JSON.parse(localStorage.getItem('Token'))
+    const request = await fetch(baseUrl + `admin/delete_user/${id}`,{
+        method: 'DELETE',
+        headers: {
+            "Content-type": "application/json",
+            "Authorization": `Bearer ${info.token}`
+        },
+    })
+        const response = await request.json();
+       return response
+}
+
+
+async function listOfCooworkes(){
+    const info = JSON.parse(localStorage.getItem('Token'))
+    const request = await fetch(baseUrl +`users/departments/coworkers`,{
+        method: 'GET',
+        headers: {
+            "Content-type": "application/json",
+            "Authorization": `Bearer ${info.token}`
+        },
+    })
+
+    const response = await request.json()
+    
+    return response[0].users
+    
+}
+
+async function listDepartUser(){
+    const info = JSON.parse(localStorage.getItem('Token'))
+    const request = await fetch(baseUrl +`users/departments`,{
+        method: 'GET',
+        headers: {
+            "Content-type": "application/json",
+            "Authorization": `Bearer ${info.token}`
+        },
+    })
+
+    const response = await request.json()
+    return response
+    
+}
+
+async function updaUserStatus(body){
+    const info = JSON.parse(localStorage.getItem('Token'))
+    const request = await fetch(baseUrl +'users',{
+        method: 'PATCH',
+        headers: {
+            "Content-type": "application/json",
+            "Authorization": `Bearer ${info.token}`,
+        },
+        body: JSON.stringify(body)
+    })
+
+    const response = await request.json()
+    console.log(response)
+    return response
+    
+}
+
+export {createUser,login,listOfComapny,getUserProfiles,validateUser,listOfDepartments,listOfUser,createDepart,editDepart,deleteDepart,hireFunction,getUserOutOfWork,dissmissFun,updateUser,deleteUser,listOfCooworkes,listDepartUser,updaUserStatus}

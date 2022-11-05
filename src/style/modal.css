@@ -14,13 +14,23 @@
     background-color: rgb(255, 255, 255);
     width: 400px;
     height: 300px;
+    position: fixed;
+    /* bottom: 25%; */
+    border-radius: 8px;
+    padding: 20px 40px;
+    box-sizing: border-box;
+}
+
+.modal-container-visualizador{
+    background-color: rgb(255, 255, 255);
+    width: 597px;
+    /* height: 300px; */
     position: relative;
     bottom: 25%;
     border-radius: 8px;
     padding: 20px 40px;
     box-sizing: border-box;
 }
-
 .modal-close{
     padding: 10px 15px;
     font-size: 20px;
@@ -99,4 +109,22 @@
     background-color: none;
     border: none;
     color: var(--gray400);
+}
+
+.formbase{
+    display: flex;
+    flex-direction: column;
+    gap: 19px;
+}
+
+.button-form{
+    width: 300px;
+    height: 40px;
+    color: white;
+    background-color: var(--color-purple);
+}
+
+.formbase input{
+    width: 300px;
+    height: 40px;
 }

@@ -4,7 +4,9 @@ import { listOfDepartments } from "../../scripts/request.js"
 import { listOfUser } from "../../scripts/request.js"
 import { listOfComapny } from "../../scripts/request.js"
 import { createDepartForm, editDepartForm } from "../../scripts/formulario.js"
-import openModal from "../../scripts/modal.js"
+import { openModal } from "../../scripts/modal.js"
+import { renderDepartamensFiltered } from "../../scripts/render.js"
+
 
 const logout = document.querySelector('.button-register')
 
@@ -24,6 +26,37 @@ create.addEventListener('click',(e)=>{
 
 
 
+async function renderOptions(){
+
+    const listComp = await listOfComapny()
+    const listDepar = await listOfDepartments()
+    const select = document.querySelector('.select-style')
+
+    listComp.forEach((list)=>{
+        const option = document.createElement("option")
+        option.value = list.name
+        option.innerText = list.name
+        select.appendChild(option)
+    })
+    select.addEventListener('change',(e)=>{
+        e.preventDefault()
+        if(select.value === "selecionar"){
+            return renderDepartamens()
+        }
+
+        const companyFilter = listDepar.filter(element => {
+            if(element.companies.name === select.value){
+                return element
+            }
+        })
+
+        console.log(companyFilter)
+        renderDepartamensFiltered(companyFilter)
+    })
+
+    
+}
+
 
 
 
@@ -33,3 +66,4 @@ listOfComapny()
 listOfUser()
 renderDepartamens()
 renderUser()
+renderOptions()
